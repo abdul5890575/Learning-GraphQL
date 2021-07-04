@@ -1,12 +1,15 @@
 //GRAPHQL backend server API
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 4000
 const graphql = require('graphql')
 const {GraphQLSchema, GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLList} = graphql
 // To create graphql server
 const { graphqlHTTP } = require('express-graphql')
 const mockdata= require("./MOCK_DATA.json")
+const cors = require("cors");
+
+app.use(cors());
 
 // Define each field type
 const UserType = new GraphQLObjectType({
